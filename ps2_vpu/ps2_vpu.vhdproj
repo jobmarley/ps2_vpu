@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <CustomProjectExtensionsPath Condition="Exists('$(LocalAppData)\CustomProjectSystems\vhdl4vs\vhdl4vsProjectType.props')">$(LocalAppData)\CustomProjectSystems\vhdl4vs\</CustomProjectExtensionsPath>
+    <CustomProjectExtensionsPath Condition="'$(CustomProjectExtensionsPath)' == ''">$(MSBuildExtensionsPath)\CustomProjectSystems\vhdl4vs\</CustomProjectExtensionsPath>
+    <ProjectGuid>bb7f811e-7113-4f64-b6c6-15643a9c954a</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(CustomProjectExtensionsPath)vhdl4vsProjectType.props" />
+  <ItemGroup>
+    <None Include="vpu\test\vpu_test_memory.coe" />
+    <None Include="vpu\vpu_core.vhd" />
+  </ItemGroup>
+  <ItemGroup>
+    <VHDLSource Include="vpu\vpu_alu.vhd" />
+    <VHDLSource Include="vpu\vpu_decode.vhd" />
+    <VHDLSource Include="vpu\vpu_instruction_reader.vhd" />
+    <VHDLSource Include="vpu\vpu_readmem.vhd" />
+    <VHDLSource Include="vpu\vpu_registers.vhd" />
+    <VHDLSource Include="vpu\vpu_read_register.vhd" />
+    <VHDLSource Include="vpu\test\vpu_test.vhd" />
+    <VHDLSource Include="vpu\test\vpu_test_simul.vhd" />
+    <VHDLSource Include="vpu\vpu_utils.vhd" />
+    <VHDLSource Include="vpu\vpu_writeback.vhd" />
+  </ItemGroup>
+  <PropertyGroup>
+    <LibraryPaths>IEEE=$(XilinxLibraryPath)\ieee;STD=$(XilinxLibraryPath)\std;UNISIM=$(XilinxLibraryPath)\unisims</LibraryPaths>
+  </PropertyGroup>
+  <Import Project="$(CustomProjectExtensionsPath)vhdl4vsProjectType.targets" />
+</Project>
